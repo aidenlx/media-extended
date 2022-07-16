@@ -1,0 +1,28 @@
+{
+  "extends": "@aidenlx/ts-config/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@player": ["player"],
+      "@render/*": ["render/*"],
+      "@view": ["media-view"],
+      "@plugin": ["mx-main"],
+      "@settings": ["settings"],
+      "@misc": ["misc"],
+      "@misc/*": ["misc/*"],
+      "@hook-utils": ["player/utils/hooks"],
+      "@styles/*": ["player/component/styles/*"],
+      "@const": ["./const.mjs"],
+      "@hook-player": ["player/component/hook-player"],
+      "@main-ps": ["./main-ps"],
+      "@main-ps/*": ["./main-ps/*"],
+      "@hook-player/*": ["player/component/hook-player/*"],
+      "@feature/*": ["feature/*"]
+    },
+    "lib": ["dom", "es5", "scripthost", "es2016", "dom.iterable"],
+    "jsx": "react",
+    "skipLibCheck": true,
+    "allowJs": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}

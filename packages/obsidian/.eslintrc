@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "@aidenlx/eslint-config",
+    "plugin:react-hooks/recommended",
+    "plugin:react/recommended",
+    "plugin:workspaces/recommended"
+  ],
+  "rules": {
+    "react/prop-types": "off",
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": [
+          "\\.less$",
+          "@electron/remote",
+          "electron",
+          "inline:",
+          "filenamify/browser",
+          "@codemirror/stream-parser"
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    }
+  }
+}

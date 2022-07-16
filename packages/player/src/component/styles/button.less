@@ -1,0 +1,43 @@
+@import "./var.less";
+
+.button-basic() {
+  width: 32px;
+  height: 32px;
+  padding: 7px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  background-color: transparent;
+  .controls-color();
+  &:hover {
+    background-color: var(--interactive-accent);
+    opacity: 1;
+    .theme-dark & {
+      color: var(--text-normal);
+    }
+  }
+  transition: all 0.3s ease-in-out;
+
+  & > * {
+    width: 18px;
+    height: 18px;
+  }
+
+  svg.play,
+  svg.pause {
+    fill: currentColor;
+  }
+}
+
+button.mx__toggle-button {
+  .button-basic();
+
+  &.selected > *:last-child,
+  &:not(.selected) > *:first-child {
+    display: none;
+  }
+}
+
+button.mx__button {
+  .button-basic();
+}

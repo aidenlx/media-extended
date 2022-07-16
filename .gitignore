@@ -1,17 +1,26 @@
-# Intellij
-*.iml
-.idea
+# npm
+node_modules
+# yarn.lock
+package-lock.json
+
+# build
+build
+dist
 
 # npm
 node_modules
 package-lock.json
+# yarn.lock
 
-# build
-main.js
-*.js.map
-styles.css
-/build/*
-!build/.hotreload
+# https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
-# saved data
-data.json
+*.webm
+*.mp4
+*.vtt
