@@ -14,5 +14,8 @@
     "neverBuiltDependencies": [
       "electron"
     ]
+  },
+  "dependencies": {
+    "media-captions": "^0.0.18"
   }
 }

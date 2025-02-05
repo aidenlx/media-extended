@@ -28,3 +28,5 @@ yarn-error.log*
 robots.txt
 sitemap.xml
 sitemap-0.xml
+
+packages/cm-language/**/*
