@@ -8,7 +8,7 @@
     "lint": "eslint src/ --ext .ts,.tsx --fix"
   },
   "devDependencies": {
-    "@codemirror/language": "../../packages/cm-language",
+    "@codemirror/language": "link:../../packages/cm-language",
     "@codemirror/state": "^6.0.0",
     "@codemirror/view": "^6.0.0",
     "@electron/remote": "^2.1.1",

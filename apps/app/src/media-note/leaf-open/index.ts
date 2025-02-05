@@ -261,19 +261,33 @@ export class LeafOpener extends Component {
   }
 
   async openNote(
-    file: TFile,
-    newLeaf?: "split",
-    direction?: SplitDirection,
-  ): Promise<{ file: TFile; editor: Editor }>;
-  async openNote(
-    file: TFile,
-    newLeaf?: PaneType | boolean,
-  ): Promise<{ file: TFile; editor: Editor }>;
-  async openNote(
     note: TFile,
     newLeaf: PaneType | boolean = "split",
     direction: SplitDirection = "vertical",
   ): Promise<{ file: TFile; editor: Editor }> {
+    // Check for existing files with the same basename
+    const existingFiles = this.app.vault
+      .getFiles()
+      .filter((f) =>
+        f.basename === note.basename &&
+        f.extension === note.extension &&
+        f.path !== note.path,
+      );
+
+    if (existingFiles.length > 0) {
+      // const confirmation = await this.app.modal.confirm(
+      //   `Note "${note.basename}" already exists. Would you like to open and append to the existing note?`,
+      //   {
+      //     title: "Note Already Exists",
+      //   }
+      // );
+
+      // if (confirmation) {
+      // Use the existing note instead
+      note = existingFiles[0];
+      // }
+    }
+
     const opened = this.#getOpenedNote([note]);
     if (opened) {
       if (opened.getMode() !== "source") {
