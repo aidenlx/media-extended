@@ -1,7 +1,0 @@
-packages:
-  - docs
-  - docs-v3
-onlyBuiltDependencies:
-  - '@biomejs/biome'
-  - esbuild
-  - sharp
