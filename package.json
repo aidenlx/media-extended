@@ -1,0 +1,23 @@
+{
+  "name": "media-extended",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "format-and-lint": "biome check .",
+    "format-and-lint:fix": "biome check . --write",
+    "pkg-lint": "sherif --fix"
+  },
+  "devDependencies": {
+    "sherif": "^1.4.0",
+    "typescript": "~5.8.2",
+    "@biomejs/biome": "1.9.4"
+  },
+  "packageManager": "pnpm@10.6.4",
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "workspaces": [
+    "docs",
+    "docs-v3"
+  ]
+}

@@ -1,0 +1,142 @@
+---
+title: Quick Start
+description: Getting started with Media Extended v4
+icon: Album
+---
+
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+
+## Introduction
+
+Welcome to the docs for Media Extended v4 beta!
+
+Integrate, manage, and play media files directly in Obsidian. 🖇️🗂️⏯️
+
+## Installation
+
+{/* TODO: read from manifest.json / manifest-beta.json */}
+For Media Extended v4, a minimum version of Obsidian 1.8.9 is required.
+
+<Tabs
+  items={["Obsidian", "BRAT", "Manual"]}
+  defaultIndex={1}
+>
+  <Tab>
+
+### via Obsidian
+
+<Callout type="error">
+Media Extended v4 is not yet released. For beta testing, please use BRAT to install the plugin.
+</Callout>
+  
+<div className='fd-steps [&_h4]:fd-step'>
+
+#### Enable community plugin
+
+1. Open `Settings` > `Community plugin`
+2. Turn on community plugin
+
+#### Install
+
+1. Open [plugin page](https://obsidian.md/plugins?id=media-extended) in obsidian
+2. Click `Install`
+3. Wait for installation to complete
+
+#### Enable
+
+Click `Enable` Button
+
+</div>
+  </Tab>
+  <Tab>
+
+### via BRAT
+
+You can use the Beta Reviewers Auto-update Tester (BRAT) plugin to install a pre-release version of the plugin.
+
+<Callout type="warn"> Beta versions are not production-ready, make sure to make proper backup before preceeding. </Callout>
+
+<div className='fd-steps [&_h4]:fd-step'>
+
+#### Install BRAT
+
+Download [BRAT](https://obsidian.md/plugins?id=obsidian42-brat) and enable it
+
+#### Add a beta plugin for testing
+
+1. Open [link to BRAT](obsidian://brat?plugin=PKM-er/media-extended), it will open BRAT and ask you to add the plugin. 
+   Of course, you can manually add the plugin by using the `Add Beta Plugin` command and enter `PKM-er/media-extended`.
+2. Click on `Add Plugin` -- wait a few seconds and BRAT will tell you what is going on
+
+#### Enable the beta plugin
+
+1. After BRAT confirms the installation, Open `Settings` > `Community plugin`
+2. Refresh the list of plugins
+3. Find the beta plugin you just installed and Enable it.
+
+</div>
+  </Tab>
+  <Tab>
+
+### Manual Install
+
+<Callout type="warn">
+This method is not recommended. Only try manual install if you have trouble
+with all other methods.
+</Callout>
+
+<div className='fd-steps [&_h4]:fd-step'>
+#### Download
+
+Download `media-extended.zip` from GitHub Release: 
+
+#### Enable community plugin
+
+1. Open `Settings` > `Community plugin`
+2. Turn on community plugin
+
+#### Open plugin folder
+
+- If you haven't installed any plugin before, you need to open the plugin folder manually: `<vault>/.obsidian/plugins`
+- If you have installed other plugins, you can use `Open plugin folder` button on the right of the `Installed plugins` section
+
+<Callout>
+The `.obsidian` folder may be hidden. On macOS, you should be able to press `Command+Shift+Dot` to show the folder in Finder.
+</Callout>
+
+#### Create plugin folder
+
+Create a new folder `media-extended` and put files from `media-extended.zip` into the folder
+
+Finally, the folder structure should look like this:
+
+<Files>
+  <Folder name="<vault>/.obsidian/plugins" open>
+    <Folder name="media-extended" open>
+      <File name="main.js" />
+      <File name="manifest.json" />
+      <File name="styles.css" />
+    </Folder>
+  </Folder>
+</Files>
+
+Make sure three files are in the plugin folder: `main.js`, `manifest.json` and `styles.css`
+
+### Reload & Enable
+
+1. Refresh the list of plugins or restart Obsidian if you have installed other plugins
+2. Open `Settings` > `Community plugin` and find `Media Extended` in the list
+3. Enable the plugin using toggle
+
+</div>
+  </Tab>
+</Tabs>
+
+## What's next?
+
+If you're coming from earlier versions or planning to join the beta testing, there are some important changes you should be aware of. We recommend starting with the [breaking changes](/v4-breaking-changes) to understand what's different in v4, then check out our [roadmap](/v4-roadmap) to see what's coming next. 
+
+If you're interested in providing feedback during the beta phase, please visit our [beta feedback guide](/beta-feedback).
+
+I understand many of you have been wondering about the long development cycle of v4. I've written a [detailed blog post](/development-journey) explaining the challenges I faced, my personal reflections on the development process, and my vision for the future of Media Extended. If you're curious about what's been happening behind the scenes, I invite you to read it.

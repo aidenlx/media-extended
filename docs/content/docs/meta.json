@@ -1,0 +1,10 @@
+{
+  "title": "Framework",
+  "description": "The docs framework",
+  "icon": "Building2",
+  "root": true,
+  "pages": [
+    "---Introduction---",
+    "index"
+  ]
+}
