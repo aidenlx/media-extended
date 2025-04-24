@@ -1,0 +1,17 @@
+{
+  "name": "@mx/release",
+  "version": "4.0.0-beta.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build:obsidian": "turbo run build --filter=@mx/obsidian",
+    "release": "release-it"
+  },
+  "devDependencies": {
+    "@release-it/bumper": "^7.0.5",
+    "release-it": "^19.0.1",
+    "semver": "^7.5.4",
+    "typescript": "~5.8.2"
+  },
+  "packageManager": "pnpm@10.6.4"
+}
