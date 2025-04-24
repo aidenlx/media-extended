@@ -1,6 +1,6 @@
 {
   "name": "@mx/release",
-  "version": "4.0.0-beta.0",
+  "version": "4.0.0-beta.1",
   "type": "module",
   "private": true,
   "scripts": {
