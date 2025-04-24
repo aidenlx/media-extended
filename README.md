@@ -3,9 +3,11 @@
 Integrate, manage, and play media files directly in Obsidian. 🖇️🗂️⏯️
 
 > [!WARNING]
-> **License Change:** Media Extended v4 is now available for testing. Future releases of v4 will be **closed source**. The original codebase up to version 3 remains open source under the MIT license and can be found in the [`v3` branch](https://github.com/PKM-er/media-extended/tree/v3).
-> 
-> For details about v4, visit mx-v4.pkmer.net (not yet available).
+> **License Change:** Media Extended v4 is now available for testing via BRAT. 
+> Future releases of v4 will be **closed source**.
+> The original codebase up to version 3 remains open source under the MIT license and can be found in the [`v3` branch](https://github.com/PKM-er/media-extended/tree/v3).
+>
+> Further information about Media Extended v4 and its beta testing will be available at mx-v4.pkmer.net (not yet available), stay tuned!
 
 ![Media Extended plugin with player and media note](./assets/first-note.jpg)
 
