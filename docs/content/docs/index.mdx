@@ -6,6 +6,12 @@ icon: Album
 
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import { File, Folder, Files } from 'fumadocs-ui/components/files';
+import { 
+  ObsidianInstallInfoCard, 
+  BRATInstallInfoCard, 
+  ManualInstallInfoCard, 
+  getDefaultMethodIndex
+} from '@/components/ui/manifest';
 
 ## Introduction
 
@@ -20,15 +26,22 @@ For Media Extended v4, a minimum version of Obsidian 1.8.9 is required.
 
 <Tabs
   items={["Obsidian", "BRAT", "Manual"]}
-  defaultIndex={1}
+  defaultIndex={await getDefaultMethodIndex(
+    { id: "media-extended", repo: "aidenlx/media-extended" }, 
+    [
+      { label: "Obsidian", value: "obsidian" },
+      { label: "BRAT", value: "brat" },
+      { label: "Manual", value: "manual" },
+    ])
+  }
 >
   <Tab>
 
 ### via Obsidian
 
-<Callout type="error">
-Media Extended v4 is not yet released. For beta testing, please use BRAT to install the plugin.
-</Callout>
+<ObsidianInstallInfoCard />
+
+
   
 <div className='fd-steps [&_h4]:fd-step'>
 
@@ -53,9 +66,11 @@ Click `Enable` Button
 
 ### via BRAT
 
-You can use the Beta Reviewers Auto-update Tester (BRAT) plugin to install a pre-release version of the plugin.
+<BRATInstallInfoCard />
 
 <Callout type="warn"> Beta versions are not production-ready, make sure to make proper backup before preceeding. </Callout>
+
+You can use the Beta Reviewers Auto-update Tester (BRAT) plugin to install a pre-release version of the plugin.
 
 <div className='fd-steps [&_h4]:fd-step'>
 
@@ -65,8 +80,8 @@ Download [BRAT](https://obsidian.md/plugins?id=obsidian42-brat) and enable it
 
 #### Add a beta plugin for testing
 
-1. Open [link to BRAT](obsidian://brat?plugin=PKM-er/media-extended), it will open BRAT and ask you to add the plugin. 
-   Of course, you can manually add the plugin by using the `Add Beta Plugin` command and enter `PKM-er/media-extended`.
+1. Open [link to BRAT](obsidian://brat?plugin=aidenlx/media-extended), it will open BRAT and ask you to add the plugin. 
+   Of course, you can manually add the plugin by using the `Add Beta Plugin` command and enter `aidenlx/media-extended`.
 2. Click on `Add Plugin` -- wait a few seconds and BRAT will tell you what is going on
 
 #### Enable the beta plugin
@@ -80,6 +95,8 @@ Download [BRAT](https://obsidian.md/plugins?id=obsidian42-brat) and enable it
   <Tab>
 
 ### Manual Install
+
+<ManualInstallInfoCard />
 
 <Callout type="warn">
 This method is not recommended. Only try manual install if you have trouble
