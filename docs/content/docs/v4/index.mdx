@@ -13,21 +13,24 @@ import {
   getDefaultMethodIndex
 } from '@/components/ui/manifest';
 
-## Introduction
-
 Welcome to the docs for Media Extended v4 beta!
 
 Integrate, manage, and play media files directly in Obsidian. 🖇️🗂️⏯️
 
-## Installation
+## For User from v3 [#v3-user]
 
-{/* TODO: read from manifest.json / manifest-beta.json */}
-For Media Extended v4, a minimum version of Obsidian 1.8.9 is required.
+<Callout type="warn" title="License Change">
+Media Extended v4 is now available for testing via BRAT. 
+Future releases of v4 will be **closed source**.
+The original codebase remains open source under the MIT license and can be found in the [`v3` branch](https://github.com/aidenlx/media-extended/tree/v3).
+</Callout>
+
+## Installation [#install]
 
 <Tabs
   items={["Obsidian", "BRAT", "Manual"]}
   defaultIndex={await getDefaultMethodIndex(
-    { id: "media-extended", repo: "aidenlx/media-extended" }, 
+    { id: "media-extended", repo: "aidenlx/media-extended", version: "v4" }, 
     [
       { label: "Obsidian", value: "obsidian" },
       { label: "BRAT", value: "brat" },
@@ -37,26 +40,24 @@ For Media Extended v4, a minimum version of Obsidian 1.8.9 is required.
 >
   <Tab>
 
-### via Obsidian
+### via Obsidian [!toc]
 
-<ObsidianInstallInfoCard />
+<ObsidianInstallInfoCard version="v4" />
 
-
-  
 <div className='fd-steps [&_h4]:fd-step'>
 
-#### Enable community plugin
+#### Enable community plugin [!toc]
 
 1. Open `Settings` > `Community plugin`
 2. Turn on community plugin
 
-#### Install
+#### Install [!toc]
 
 1. Open [plugin page](https://obsidian.md/plugins?id=media-extended) in obsidian
 2. Click `Install`
 3. Wait for installation to complete
 
-#### Enable
+#### Enable [!toc]
 
 Click `Enable` Button
 
@@ -64,7 +65,7 @@ Click `Enable` Button
   </Tab>
   <Tab>
 
-### via BRAT
+### via BRAT [!toc]
 
 <BRATInstallInfoCard />
 
@@ -74,17 +75,17 @@ You can use the Beta Reviewers Auto-update Tester (BRAT) plugin to install a pre
 
 <div className='fd-steps [&_h4]:fd-step'>
 
-#### Install BRAT
+#### Install BRAT [!toc]
 
 Download [BRAT](https://obsidian.md/plugins?id=obsidian42-brat) and enable it
 
-#### Add a beta plugin for testing
+#### Add a beta plugin for testing [!toc]
 
 1. Open [link to BRAT](obsidian://brat?plugin=aidenlx/media-extended), it will open BRAT and ask you to add the plugin. 
    Of course, you can manually add the plugin by using the `Add Beta Plugin` command and enter `aidenlx/media-extended`.
 2. Click on `Add Plugin` -- wait a few seconds and BRAT will tell you what is going on
 
-#### Enable the beta plugin
+#### Enable the beta plugin [!toc]
 
 1. After BRAT confirms the installation, Open `Settings` > `Community plugin`
 2. Refresh the list of plugins
@@ -94,9 +95,9 @@ Download [BRAT](https://obsidian.md/plugins?id=obsidian42-brat) and enable it
   </Tab>
   <Tab>
 
-### Manual Install
+### Manual Install [!toc]
 
-<ManualInstallInfoCard />
+<ManualInstallInfoCard channel="beta" />
 
 <Callout type="warn">
 This method is not recommended. Only try manual install if you have trouble
@@ -104,16 +105,16 @@ with all other methods.
 </Callout>
 
 <div className='fd-steps [&_h4]:fd-step'>
-#### Download
+#### Download [!toc]
 
 Download `media-extended.zip` from GitHub Release: 
 
-#### Enable community plugin
+#### Enable community plugin [!toc]
 
 1. Open `Settings` > `Community plugin`
 2. Turn on community plugin
 
-#### Open plugin folder
+#### Open plugin folder [!toc]
 
 - If you haven't installed any plugin before, you need to open the plugin folder manually: `<vault>/.obsidian/plugins`
 - If you have installed other plugins, you can use `Open plugin folder` button on the right of the `Installed plugins` section
@@ -122,7 +123,7 @@ Download `media-extended.zip` from GitHub Release:
 The `.obsidian` folder may be hidden. On macOS, you should be able to press `Command+Shift+Dot` to show the folder in Finder.
 </Callout>
 
-#### Create plugin folder
+#### Create plugin folder [!toc]
 
 Create a new folder `media-extended` and put files from `media-extended.zip` into the folder
 
@@ -140,7 +141,7 @@ Finally, the folder structure should look like this:
 
 Make sure three files are in the plugin folder: `main.js`, `manifest.json` and `styles.css`
 
-### Reload & Enable
+### Reload & Enable [!toc]
 
 1. Refresh the list of plugins or restart Obsidian if you have installed other plugins
 2. Open `Settings` > `Community plugin` and find `Media Extended` in the list
@@ -157,3 +158,7 @@ If you're coming from earlier versions or planning to join the beta testing, the
 If you're interested in providing feedback during the beta phase, please visit our [beta feedback guide](/beta-feedback).
 
 I understand many of you have been wondering about the long development cycle of v4. I've written a [detailed blog post](/development-journey) explaining the challenges I faced, my personal reflections on the development process, and my vision for the future of Media Extended. If you're curious about what's been happening behind the scenes, I invite you to read it.
+
+## Special Thanks
+
+A special thanks to [bfcs](https://github.com/bfcs) for their valuable contributions. They have helped fix issues during a long period of inactivity and made attempts to implement YouTube transcript functionality!

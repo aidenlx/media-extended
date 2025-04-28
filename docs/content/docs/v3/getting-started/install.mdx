@@ -1,0 +1,115 @@
+---
+title: Installation
+description: Installation guide for Media Extended v3
+icon: Download
+---
+
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+import { 
+  ObsidianInstallInfoCard, 
+  BRATInstallInfoCard, 
+  ManualInstallInfoCard, 
+  getDefaultMethodIndex
+} from '@/components/ui/manifest';
+
+<Tabs
+  items={["Obsidian", "BRAT", "Manual"]}
+  defaultIndex={await getDefaultMethodIndex(
+    { id: "media-extended", repo: "aidenlx/media-extended", version: "v3" }, 
+    [
+      { label: "Obsidian", value: "obsidian" },
+      { label: "BRAT", value: "brat" },
+      { label: "Manual", value: "manual" },
+    ])
+  }
+>
+  <Tab>
+
+## via Obsidian [!toc]
+
+<ObsidianInstallInfoCard version="v3" />
+
+<div className='fd-steps [&_h3]:fd-step'>
+
+### Enable community plugin [!toc]
+
+1. Open `Settings` > `Community plugin`
+2. Turn on community plugin
+
+### Install [!toc]
+
+1. Open [plugin page](https://obsidian.md/plugins?id=media-extended) in obsidian
+2. Click `Install`
+3. Wait for installation to complete
+
+### Enable [!toc]
+
+Click `Enable` Button
+
+</div>
+  </Tab>
+  <Tab>
+
+## via BRAT [!toc]
+
+Media Extended v4 is now available for testing via BRAT. For details, see [v4 docs](/docs/v4#v3-user).
+
+    </Tab>
+    <Tab>
+
+## Manual Install [!toc]
+
+<ManualInstallInfoCard />
+
+<Callout type="warn">
+This method is not recommended. Only try manual install if you have trouble
+with all other methods.
+</Callout>
+
+<div className='fd-steps [&_h3]:fd-step'>
+### Download [!toc]
+
+Download `media-extended.zip` from GitHub Release: 
+
+### Enable community plugin [!toc]
+
+1. Open `Settings` > `Community plugin`
+2. Turn on community plugin
+
+### Open plugin folder [!toc]
+
+- If you haven't installed any plugin before, you need to open the plugin folder manually: `<vault>/.obsidian/plugins`
+- If you have installed other plugins, you can use `Open plugin folder` button on the right of the `Installed plugins` section
+
+<Callout>
+The `.obsidian` folder may be hidden. On macOS, you should be able to press `Command+Shift+Dot` to show the folder in Finder.
+</Callout>
+
+### Create plugin folder [!toc]
+
+Create a new folder `media-extended` and put files from `media-extended.zip` into the folder
+
+Finally, the folder structure should look like this:
+
+<Files>
+  <Folder name="<vault>/.obsidian/plugins" open>
+    <Folder name="media-extended" open>
+      <File name="main.js" />
+      <File name="manifest.json" />
+      <File name="styles.css" />
+    </Folder>
+  </Folder>
+</Files>
+
+Make sure three files are in the plugin folder: `main.js`, `manifest.json` and `styles.css`
+
+## Reload & Enable [!toc]
+
+1. Refresh the list of plugins or restart Obsidian if you have installed other plugins
+2. Open `Settings` > `Community plugin` and find `Media Extended` in the list
+3. Enable the plugin using toggle
+
+</div>
+  </Tab>
+</Tabs>

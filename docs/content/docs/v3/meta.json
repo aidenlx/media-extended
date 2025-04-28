@@ -1,0 +1,16 @@
+{
+  "title": "Stable",
+  "description": "Media Extended v3",
+  "root": true,
+  "icon": "Play",
+  "pages": [
+    "index",
+    "getting-started/install",
+    "getting-started/first-note",
+    "getting-started/media-clip",
+    "getting-started/subtitle",
+    "faq",
+    "---Reference---",
+    "reference/commands"
+  ]
+}

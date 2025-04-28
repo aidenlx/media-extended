@@ -17,9 +17,9 @@ const pluginManifestSchema = v.object({
 
 export async function getPluginManifest(
   repo: string,
-  { testing }: { testing?: "beta" } = {},
+  { channel }: { channel?: "beta" } = {},
 ): Promise<PluginManifest | null> {
-  const file = testing === "beta" ? "manifest-beta.json" : "manifest.json";
+  const file = channel === "beta" ? "manifest-beta.json" : "manifest.json";
   const res = await fetch(
     `https://raw.githubusercontent.com/${repo}/main/${file}`,
     {
@@ -64,10 +64,15 @@ async function getCommunityPluginsList(): Promise<CommunityPluginList> {
 type PluginManifest = v.InferOutput<typeof pluginManifestSchema>;
 type CommunityPluginList = v.InferOutput<typeof communityPluginListSchema>;
 
-export async function isPluginReviewed({ id }: { id: string }) {
+export async function isPluginReviewed({
+  id,
+  closedSource,
+}: { id: string; closedSource: boolean }) {
   const list = await getCommunityPluginsList();
   return list.some(
-    (plugin) => plugin.id === id && plugin.description.match(/closed? source/i),
+    (plugin) =>
+      plugin.id === id &&
+      (!closedSource || plugin.description.match(/closed? source/i)),
   );
 }
 
@@ -75,10 +80,15 @@ export type InstallMethod = "brat" | "obsidian" | "manual";
 export async function getDefaultInstallMethod({
   id,
   repo,
-}: { id: string; repo: string }): Promise<InstallMethod> {
-  const isReviewed = await isPluginReviewed({ id });
+  closedSource,
+}: {
+  id: string;
+  repo: string;
+  closedSource: boolean;
+}): Promise<InstallMethod> {
+  const isReviewed = await isPluginReviewed({ id, closedSource });
   if (isReviewed) return "obsidian";
-  const betaManifest = await getPluginManifest(repo, { testing: "beta" });
+  const betaManifest = await getPluginManifest(repo, { channel: "beta" });
   if (betaManifest) return "brat";
   return "manual";
 }

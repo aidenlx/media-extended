@@ -1,0 +1,11 @@
+{
+  "title": "Beta",
+  "description": "Media Extended v4 Beta",
+  "root": true,
+  "icon": "FlaskConical",
+  "pages": [
+    "---Introduction---",
+    "index",
+    "breaking-changes"
+  ]
+}

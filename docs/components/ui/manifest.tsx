@@ -7,9 +7,9 @@ import {
 import { Callout } from "fumadocs-ui/components/callout";
 import { Badge } from "@/components/ui/badge";
 
-async function Manifest({ testing }: { testing?: "beta" }) {
+async function Manifest({ channel }: { channel?: "beta" }) {
   const manifest = await getPluginManifest("aidenlx/media-extended", {
-    testing,
+    channel: channel,
   });
   if (!manifest) return null;
   return (
@@ -35,13 +35,18 @@ async function Manifest({ testing }: { testing?: "beta" }) {
   );
 }
 
-export async function ObsidianInstallInfoCard() {
-  const isReviewed = await isPluginReviewed({ id: "media-extended" });
+export async function ObsidianInstallInfoCard({
+  version,
+}: { version: "v3" | "v4" }) {
+  const isReviewed = await isPluginReviewed({
+    id: "media-extended",
+    closedSource: version !== "v3",
+  });
   if (!isReviewed) {
     return (
       <Callout type="error">
-        Media Extended v4 is not yet released. For beta testing, please use BRAT
-        to install the plugin.
+        Media Extended {version} is not yet released. For beta testing, please
+        use BRAT to install the plugin.
       </Callout>
     );
   }
@@ -55,24 +60,30 @@ export async function ObsidianInstallInfoCard() {
 export async function BRATInstallInfoCard() {
   return (
     <Callout type="info" title="Current Beta Release">
-      <Manifest testing="beta" />
+      <Manifest channel="beta" />
     </Callout>
   );
 }
 
-export async function ManualInstallInfoCard() {
+export async function ManualInstallInfoCard({ channel }: { channel?: "beta" }) {
   return (
-    <Callout type="info" title="Current Beta Release">
-      {/* TBD: change to official release when v4 is released */}
-      <Manifest testing="beta" />
+    <Callout
+      type="info"
+      title={channel === "beta" ? "Current Beta Release" : "Current Release"}
+    >
+      <Manifest channel={channel} />
     </Callout>
   );
 }
 
 export async function getDefaultMethodIndex(
-  { id, repo }: { id: string; repo: string },
+  { id, repo, version }: { id: string; repo: string; version: "v3" | "v4" },
   items: { label: string; value: InstallMethod }[],
 ) {
-  const method = await getDefaultInstallMethod({ id, repo });
+  const method = await getDefaultInstallMethod({
+    id,
+    repo,
+    closedSource: version !== "v3",
+  });
   return items.findIndex((item) => item.value === method);
 }

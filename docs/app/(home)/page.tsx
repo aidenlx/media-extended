@@ -9,13 +9,16 @@ export default function HomePage() {
       <p className="text-fd-muted-foreground mb-6">
         Integrate, manage, and play media files directly in Obsidian.
       </p>
-      <div className="flex justify-center">
-        <Button
-          asChild
-          className="group flex items-center gap-1 has-[>svg]:pr-2.5"
-        >
-          <Link href="/docs">
-            Get Started
+      <div className="flex justify-center gap-2">
+        <Button asChild className="has-[>svg]:pr-2.5">
+          <Link href="/docs/v3">
+            Get Started with v3
+            <ArrowUpRight className="size-4" />
+          </Link>
+        </Button>
+        <Button asChild variant="secondary" className="has-[>svg]:pr-2.5">
+          <Link href="/docs/v4">
+            v4 Beta Testing
             <ArrowUpRight className="size-4" />
           </Link>
         </Button>
