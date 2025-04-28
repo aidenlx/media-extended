@@ -10,36 +10,28 @@ const config: NextConfig = {
       destination: "/docs/v3",
       permanent: false,
     },
-    {
-      source: "/getting-started/install",
-      destination: "/docs/v3/getting-started/install",
-      permanent: true,
-    },
-    {
-      source: "/getting-started/first-note",
-      destination: "/docs/v3/getting-started/first-note",
-      permanent: true,
-    },
-    {
-      source: "/getting-started/media-clip",
-      destination: "/docs/v3/getting-started/media-clip",
-      permanent: true,
-    },
-    {
-      source: "/getting-started/subtitle",
-      destination: "/docs/v3/getting-started/subtitle",
-      permanent: true,
-    },
-    {
-      source: "/faq",
+    ...["zh-CN", "en"].map((lang) => ({
+      source: `/${lang}`,
+      destination: "/docs/v3",
+      permanent: false,
+    })),
+    ...["/getting-started/:path*", "/:lang/getting-started/:path*"].map(
+      (path) => ({
+        source: path,
+        destination: "/docs/v3/getting-started/:path*",
+        permanent: true,
+      }),
+    ),
+    ...["/faq", "/:lang/faq"].map((path) => ({
+      source: path,
       destination: "/docs/v3/faq",
       permanent: true,
-    },
-    {
-      source: "/reference/commands",
-      destination: "/docs/v3/reference/commands",
+    })),
+    ...["/reference/:path*", "/:lang/reference/:path*"].map((path) => ({
+      source: path,
+      destination: "/docs/v3/reference/:path*",
       permanent: true,
-    },
+    })),
   ],
 };
 

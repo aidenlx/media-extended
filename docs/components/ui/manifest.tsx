@@ -6,10 +6,11 @@ import {
 } from "@/app/data/manifest";
 import { Callout } from "fumadocs-ui/components/callout";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "./button";
 
 async function Manifest({ channel }: { channel?: "beta" }) {
   const manifest = await getPluginManifest("aidenlx/media-extended", {
-    channel: channel,
+    channel,
   });
   if (!manifest) return null;
   return (
@@ -86,4 +87,36 @@ export async function getDefaultMethodIndex(
     closedSource: version !== "v3",
   });
   return items.findIndex((item) => item.value === method);
+}
+
+async function getRelease({
+  repo,
+  channel,
+  path,
+}: { repo: string; channel?: "beta"; path: string }) {
+  const manifest = await getPluginManifest(repo, { channel });
+  return `https://github.com/${repo}/releases/download/${manifest?.version ?? "latest"}/${path}`;
+}
+
+export async function ReleaseZip({
+  channel,
+  children,
+}: { channel?: "beta"; children: React.ReactNode }) {
+  return (
+    <Button variant="link" asChild>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href={
+          await getRelease({
+            repo: "aidenlx/media-extended",
+            channel,
+            path: "media-extended.zip",
+          })
+        }
+      >
+        {children}
+      </a>
+    </Button>
+  );
 }
