@@ -6,6 +6,7 @@
   "pages": [
     "---Introduction---",
     "index",
+    "load-media",
     "breaking-changes"
   ]
 }
