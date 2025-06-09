@@ -3,7 +3,7 @@ title: Breaking Changes from v3
 description: A list of breaking changes from v3 to v4
 ---
 
-## Website Player deprecated
+## Website player deprecated
 
 The general website player experiencing YouTube loading issues has been deprecated in v4. 
 We're developing a browser connect feature that will provide an improved solution for this functionality. 
@@ -12,29 +12,18 @@ In the meantime, v4 still supports YouTube iframe integration, which offers stab
 
 Other websites including Coursera, Bilibili, and similar platforms are no longer supported for embedding and playback in v4. These will be addressed with the upcoming browser connect feature.
 
-## Media Note now requires a uid metadata field 
+## Media note now requires a uid metadata field 
 
 The `uid` metadata field is now required for Media Notes, which is used to identify the media associated with the note.
 
 For existing Media Notes, you can run the following command to add the `mx-uid` metadata field:
 
-<Callout type="warn">
-Migration will run on all notes containing any of the following fields: `media`, `video`, or `audio`. 
-
-This is a potentially destructive operation that modifies your note metadata, so please make a backup of your vault before running the migration command. The migration process is irreversible and will update all qualifying notes in your vault.
-</Callout>
-
 ```md 
 Media Extended: Migrate media notes from old format
 ```
 
+<Callout type="warn">
+Migration will run on all notes containing any of the following fields in frontmatter: `media`, `video`, or `audio`. 
 
-
-
-
-
-
-
-
-
-
+This is a potentially destructive operation that modifies your note metadata, so please make a backup of your vault before running the migration command. The migration process is irreversible and will update all qualifying notes in your vault.
+</Callout>

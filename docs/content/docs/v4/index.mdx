@@ -13,18 +13,24 @@ import {
   ReleaseZip,
   getDefaultMethodIndex
 } from '@/components/ui/manifest';
+import { FolderOpenIcon } from 'lucide-react';
+
+## Introduction
 
 Welcome to the docs for Media Extended v4 beta!
 
 Integrate, manage, and play media files directly in Obsidian. 🖇️🗂️⏯️
 
-## For User from v3 [#v3-user]
+### For User from v3 [#v3-user]
 
 <Callout type="warn" title="License Change">
-Media Extended v4 is now available for testing via BRAT. 
 Future releases of v4 will be **closed source**.
 The original codebase remains open source under the MIT license and can be found in the [`v3` branch](https://github.com/aidenlx/media-extended/tree/v3).
 </Callout>
+
+If you're coming from earlier versions or planning to join the beta testing, there are some important changes you should be aware of. 
+We recommend starting with the [breaking changes](/docs/v4/breaking-changes) to understand what's different in v4, 
+then check out the [new features](/docs/v4/whats-new) to see what's new.
 
 ## Installation [#install]
 
@@ -156,13 +162,25 @@ Make sure three files are in the plugin folder: `main.js`, `manifest.json` and `
   </Tab>
 </Tabs>
 
-## What's next?
+## Getting Started [#getting-started]
 
-If you're coming from earlier versions or planning to join the beta testing, there are some important changes you should be aware of. We recommend starting with the [breaking changes](/v4-breaking-changes) to understand what's different in v4, then check out our [roadmap](/v4-roadmap) to see what's coming next. 
+With just one click, you can open video directly in Obsidian.
 
-If you're interested in providing feedback during the beta phase, please visit our [beta feedback guide](/beta-feedback).
+Click this link to try it now: [Steve Jobs' 2005 Stanford Commencement Address](obsidian://mx-open?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DUF8uR6Z6KLc)
 
-I understand many of you have been wondering about the long development cycle of v4. I've written a [detailed blog post](/development-journey) explaining the challenges I faced, my personal reflections on the development process, and my vision for the future of Media Extended. If you're curious about what's been happening behind the scenes, I invite you to read it.
+![first player with youtube video](./first-player.png)
+
+See that **Timestamp&nbsp;⭐&nbsp;** button? When you're ready to take notes, one click adds a timestamped link back to this exact moment in the video. It's that easy!
+
+![first media note](./first-note.png)
+
+You're all set! To continue, you can check out the following guides:
+
+<Cards>
+  <Card icon={<FolderOpenIcon />} href="/docs/v4/load-media" title="Load Videos and Audio">
+    opening videos and audio from local files and web sources
+  </Card>
+</Cards>
 
 ## Special Thanks
 
