@@ -3,6 +3,7 @@ import {
   getDefaultInstallMethod,
   getPluginManifest,
   isPluginReviewed,
+  isV4PubliclyAvailable,
 } from "@/app/data/manifest";
 import { Callout } from "fumadocs-ui/components/callout";
 import { Badge } from "@/components/ui/badge";
@@ -43,7 +44,14 @@ export async function ObsidianInstallInfoCard({
     id: "media-extended",
     closedSource: version !== "v3",
   });
-  if (!isReviewed) {
+  const manifest = await getPluginManifest("aidenlx/media-extended", {
+    channel: "latest",
+  });
+  if (
+    !isReviewed ||
+    !manifest ||
+    (version === "v4" && !isV4PubliclyAvailable(manifest))
+  ) {
     return (
       <Callout type="error">
         Media Extended {version} is not yet released. For beta testing, please
@@ -84,7 +92,7 @@ export async function getDefaultMethodIndex(
   const method = await getDefaultInstallMethod({
     id,
     repo,
-    closedSource: version !== "v3",
+    version,
   });
   return items.findIndex((item) => item.value === method);
 }

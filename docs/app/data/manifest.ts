@@ -1,4 +1,5 @@
 import * as v from "valibot";
+import * as semver from "semver";
 
 const communityPluginListSchema = v.array(
   v.object({
@@ -17,7 +18,7 @@ const pluginManifestSchema = v.object({
 
 export async function getPluginManifest(
   repo: string,
-  { channel }: { channel?: "beta" } = {},
+  { channel = "latest" }: { channel?: "beta" | "latest" } = {},
 ): Promise<PluginManifest | null> {
   const file = channel === "beta" ? "manifest-beta.json" : "manifest.json";
   const res = await fetch(
@@ -76,18 +77,37 @@ export async function isPluginReviewed({
   );
 }
 
+export function isV4PubliclyAvailable(manifest: PluginManifest) {
+  return (
+    semver.valid(manifest.version) &&
+    semver.gte(semver.coerce(manifest.version) ?? "0.0.0", "4.0.0")
+  );
+}
+
 export type InstallMethod = "brat" | "obsidian" | "manual";
 export async function getDefaultInstallMethod({
   id,
   repo,
-  closedSource,
+  version,
 }: {
   id: string;
   repo: string;
-  closedSource: boolean;
+  version: "v3" | "v4";
 }): Promise<InstallMethod> {
-  const isReviewed = await isPluginReviewed({ id, closedSource });
-  if (isReviewed) return "obsidian";
+  const isReviewed = await isPluginReviewed({
+    id,
+    closedSource: version === "v4",
+  });
+  if (isReviewed) {
+    const latestManifest = await getPluginManifest(repo);
+    if (
+      latestManifest &&
+      // If the plugin v4 is not publicly available, we don't want to recommend obsidian
+      !(version === "v4" && !isV4PubliclyAvailable(latestManifest))
+    ) {
+      return "obsidian";
+    }
+  }
   const betaManifest = await getPluginManifest(repo, { channel: "beta" });
   if (betaManifest) return "brat";
   return "manual";
