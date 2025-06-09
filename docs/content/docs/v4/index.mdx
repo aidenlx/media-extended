@@ -151,7 +151,7 @@ Finally, the folder structure should look like this:
 
 Make sure three files are in the plugin folder: `main.js`, `manifest.json` and `styles.css`
 
-### Reload & Enable [!toc]
+#### Reload & Enable [!toc]
 
 1. Refresh the list of plugins or restart Obsidian if you have installed other plugins
 2. Open `Settings` > `Community plugin` and find `Media Extended` in the list
@@ -183,7 +183,8 @@ import {
   ListOrderedIcon,
   PlayCircleIcon,
   LinkIcon,
-  HelpCircleIcon 
+  HelpCircleIcon,
+  MicIcon
 } from 'lucide-react';
 
 <Cards>
@@ -203,10 +204,13 @@ import {
     Generate chapters for your media
   </Card>
   <Card icon={<PlayCircleIcon />} href="#" title="Playback">
-    Customize playback settings, including commands and hotkeys
+    Customize playback using commands and hotkeys
   </Card>
   <Card icon={<LinkIcon />} href="#" title="Media Embed">
-    Include media clips and links with playback options in your notes
+    Include media clips and links in your notes
+  </Card>
+  <Card icon={<MicIcon />} href="#" title="Recording">
+    Take notes while recording media
   </Card>
   <Card icon={<HelpCircleIcon />} href="#" title="FAQ">
     FAQ for Media Extended
