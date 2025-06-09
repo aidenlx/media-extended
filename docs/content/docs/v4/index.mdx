@@ -13,7 +13,6 @@ import {
   ReleaseZip,
   getDefaultMethodIndex
 } from '@/components/ui/manifest';
-import { FolderOpenIcon } from 'lucide-react';
 
 ## Introduction
 
@@ -176,9 +175,41 @@ See that **Timestamp&nbsp;⭐&nbsp;** button? When you're ready to take notes, o
 
 You're all set! To continue, you can check out the following guides:
 
+import { 
+  FolderOpenIcon,
+  LibraryIcon,
+  FileTextIcon,
+  ListMusicIcon,
+  ListOrderedIcon,
+  PlayCircleIcon,
+  LinkIcon,
+  HelpCircleIcon 
+} from 'lucide-react';
+
 <Cards>
   <Card icon={<FolderOpenIcon />} href="/docs/v4/load-media" title="Opening Media">
     Open media from local files, remote URLs, and media-hosting services
+  </Card>
+  <Card icon={<LibraryIcon />} href="#" title="Media Library">
+    Manage your media in Media Library
+  </Card>
+  <Card icon={<FileTextIcon />} href="#" title="Transcript">
+    Quick navigation using transcript
+  </Card>
+  <Card icon={<ListMusicIcon />} href="#" title="Playlist">
+    Create and manage playlists
+  </Card>
+  <Card icon={<ListOrderedIcon />} href="#" title="Chapter">
+    Generate chapters for your media
+  </Card>
+  <Card icon={<PlayCircleIcon />} href="#" title="Playback">
+    Customize playback settings, including commands and hotkeys
+  </Card>
+  <Card icon={<LinkIcon />} href="#" title="Media Embed">
+    Include media clips and links with playback options in your notes
+  </Card>
+  <Card icon={<HelpCircleIcon />} href="#" title="FAQ">
+    FAQ for Media Extended
   </Card>
 </Cards>
 
