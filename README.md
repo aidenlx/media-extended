@@ -15,7 +15,7 @@ This plugin is designed to enrich your note-taking experience in obsidian.md by 
 
 ## Getting Started 🚀
 
-Go to [media-extended documentation](https://mx.pkmer.net/#getting-started) for more information.
+Go to [media-extended documentation](https://mx.pkmer.net/docs/v3#getting-started) for more information.
 
 > [!TIP]
 > TL;DR:
@@ -25,7 +25,7 @@ Go to [media-extended documentation](https://mx.pkmer.net/#getting-started) for 
 > obsidian://mx-open/https://www.youtube.com/watch?v=jNQXAC9IVRw
 > ```
 
-For common question, please refer to the [FAQ](https://mx.pkmer.net/faq), and before open an issue, please check [Known issues](https://mx.pkmer.net/faq/known-issue) first.
+For common question, please refer to the [FAQ](https://mx.pkmer.net/docs/v3/faq), and before open an issue, please check [Known issues](https://mx.pkmer.net/docs/v3/faq/known-issue) first.
 
 ## Features 🌟
 
