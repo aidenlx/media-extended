@@ -1,0 +1,89 @@
+---
+title: Screenshot
+description: Capture and integrate screenshots from your media directly into your notes.
+icon: Frame
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+Media Extended allows you to capture screenshots from videos and seamlessly embed them into your notes. This isn't just a simple screen grab; it's a powerful way to link visual information directly to your thoughts, complete with timestamps.
+
+## Capturing a Screenshot
+
+You can capture a screenshot in a couple of ways, depending on your workflow.
+
+<Steps>
+<Step>
+### From the Player
+
+The quickest way to grab a screenshot is from the player's control bar. Just click the camera icon.
+
+![Capture Screenshot from Player Controls](./screenshot-action.png)
+
+This will save the current frame to your vault and insert a link into your active note.
+</Step>
+<Step>
+### With Commands
+
+For a more keyboard-driven approach, you can use commands from the command palette:
+
+| Command | Description |
+| --- | --- |
+| `Save Screenshot` | Saves the current frame to your vault and inserts a link into your note. |
+| `Copy Screenshot` | Copies the current frame to your clipboard. |
+| `Clip and Save Screenshot` | Lets you crop the frame before saving it and inserting a link. |
+| `Clip and Copy Screenshot` | Lets you crop the frame before copying it to the clipboard. |
+
+Assign hotkeys to these commands for even faster access.
+</Step>
+</Steps>
+
+## Clipping Images
+
+When you use the "Clip" variants of the screenshot commands, a cropping tool will appear over the video. You can adjust the selection to focus on the most important part of the image before saving or copying.
+
+![Clipping a screenshot](./clip-image.png)
+
+## What Gets Saved
+
+When you save a screenshot, two things happen:
+
+1.  An image file is created in your vault.
+2.  A timestamped link to that screenshot is inserted into your active note.
+
+By default, the inserted text looks like this:
+
+```md
+- ![[mx-img-nttvxbfgryxc8va2fi327dk8-pt19_80s.jpg|Big Buck Bunny - 00:19|50]] [[big-buck-bunny-1080p-30sec.mp4#t=00:19.80|00:19]]
+```
+
+This is a combination of two things:
+- `![[screenshot.jpg|TITLE|WIDTH]]`: An embedded image of the screenshot. The text inside `|...|` is the embed's display text, which by default shows the media title and timestamp, and sets the image width.
+- `[[video.mp4#t=TIMESTAMP|LABEL]]`: A timestamp link that jumps you to the exact moment in the video.
+
+## Customization
+
+You can fine-tune the screenshot feature in the plugin settings.
+
+### Screenshot Format
+
+You can choose the file format for your saved screenshots. Go to `Settings > Media Extended > Playback > Screenshot`. You can select PNG, JPEG, or WEBP. WEBP offers the best compression but may not be supported on all devices.
+
+### Save Location
+
+By default, screenshots are saved in your vault root. You can specify a custom folder in the settings to keep your attachments organized.
+
+### Link Templates
+
+The text inserted into your note is generated from templates, which you can customize under `Settings > Media Extended > Note > Template`.
+
+- **Screenshot Template**: Defines the structure of the entire line. Default is `\n- !{{SCREENSHOT}} {{TIMESTAMP}}`, which will insert a new line of list item with an screenshot thumbnail and a timestamp link.
+  - `{{SCREENSHOT}}`: The placeholder for the image embed.
+  - `{{TIMESTAMP}}`: The placeholder for the timestamp link.
+- **Screenshot Embed Template**: Defines the display text for the embedded image. Default is `{{TITLE}}{{DURATION}}|50`.
+  - `{{TITLE}}`: The title of the media.
+  - `{{DURATION}}`: The formatted timestamp.
+  - `|50`: An example of setting the image width.
+
+You can change these templates to fit your note-taking style perfectly.
+

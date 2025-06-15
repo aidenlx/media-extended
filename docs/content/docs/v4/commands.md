@@ -47,6 +47,8 @@ Control the playback speed of the media.
 | `Save screenshot` | Saves a screenshot of the current video frame to your vault. |
 | `Copy screenshot` | Copies a screenshot of the current video frame to the clipboard. |
 | `Take timestamp on current recording` | Inserts a timestamp into your note for the current audio recording. |
+| `Clip and save screenshot` | Clips current video frame and saves the screenshot to your vault. |
+| `Clip and copy screenshot` | Clips current video frame and copies the screenshot to the clipboard. |
 
 ## Miscellaneous
 

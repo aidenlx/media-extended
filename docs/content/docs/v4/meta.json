@@ -6,9 +6,11 @@
   "pages": [
     "---Introduction---",
     "index",
+    "breaking-changes",
+    "---Features---",
     "load-media",
     "playback",
-    "breaking-changes",
+    "screenshot",
     "---Reference---",
     "commands",
     "hotkeys"
