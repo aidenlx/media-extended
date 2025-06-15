@@ -7,6 +7,10 @@
     "---Introduction---",
     "index",
     "load-media",
-    "breaking-changes"
+    "playback",
+    "breaking-changes",
+    "---Reference---",
+    "commands",
+    "hotkeys"
   ]
 }
