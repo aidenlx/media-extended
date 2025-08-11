@@ -30,6 +30,7 @@ export default {
   },
   github: {
     release: true,
+    autoGenerate: true,
     assets: [
       "main.js",
       "manifest.json",
