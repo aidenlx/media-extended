@@ -12,8 +12,8 @@ export default {
   plugins: {
     "./scripts/ob-version.js": {
       indent: 2,
-      copyTo: "../../apps/obsidian",
-      directory: "../",
+      copyTo: "../",
+      directory: "../../apps/obsidian",
     },
     "@release-it/bumper": {
       out: "../../apps/obsidian/package.json",
