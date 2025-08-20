@@ -4,16 +4,15 @@ description: A list of breaking changes from v3 to v4
 icon: Zap
 ---
 
-## Website player deprecated
+## Website player deprecated [#website-player-deprecated]
 
-The general website player experiencing YouTube loading issues has been deprecated in v4. 
-We're developing a browser connect feature that will provide an improved solution for this functionality. 
+The general website player has been deprecated in v4 due to YouTube loading issues. As a replacement, v4 features an upgraded YouTube iframe integration with full screenshot functionality support, providing much more stable video playback.
 
-In the meantime, v4 still supports YouTube iframe integration, which offers stable video playback without the loading problems (though screenshot functionality isn't available). This provides a reliable alternative until browser connect is released.
+Vimeo now falls back to iframe integration but does not yet support screenshots. Other platforms including Coursera, Bilibili, and similar websites are no longer supported for embedding and playback in v4.
 
-Other websites including Coursera, Bilibili, and similar platforms are no longer supported for embedding and playback in v4. These will be addressed with the upcoming [browser connect feature](/docs/v4/load-media#browser-connect).
+We're developing a browser connect feature that will provide an improved solution for all these platforms. Stay tuned for updates!
 
-## Media note now requires a uid metadata field 
+## Media note now requires a uid metadata field [#media-note-uid]
 
 The `uid` metadata field is now required for Media Notes, which is used to identify the media associated with the note.
 
