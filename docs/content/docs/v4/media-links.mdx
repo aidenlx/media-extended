@@ -26,7 +26,7 @@ You can set up hotkeys in `Settings > Hotkeys` by searching for "Media Extended"
 
 To embed a media file directly in your notes, simply add a `!` before the link. This works for both internal files (`![[My Video.mp4]]`) and external videos from platforms like YouTube and Vimeo (`![](https://www.youtube.com/watch?v=..._id_)`). Embeds support all the same hash properties as regular links, allowing you to create rich, interactive notes.
 
-`![[My Video.mp4#t=10&play&loop]]`
+`![[My Video.mp4#t=10&autoplay&loop]]`
 
 This will embed "My Video.mp4", start it automatically at the 10-second mark, and loop it.
 
@@ -38,7 +38,7 @@ You can also control the embed size by adding `|` followed by a number represent
 
 By specifying a start and end time with the `t=` hash property in a media embed, you can create a "media clip." This will embed a portion of the media that plays only within the specified range.
 
-`![[My Video.mp4#t=1m10s,1m20s]]`
+`![[My Video.mp4#t=1:10,1:20]]`
 
 This creates a 10-second clip from "My Video.mp4" starting at 1 minute 10 seconds. You can combine this with other properties like `loop` to have a short clip play repeatedly.
 
@@ -61,24 +61,13 @@ In `Settings > Media Extended > Link behavior`, you can define how media links a
 
 You can choose to open media in the current pane, a new tab, a split pane, or a new window. This, combined with the ability to [pin players](/docs/v4/playback#avoid-player-clutter-with-pinning), gives you full control over your media note-taking workspace.
 
-## Advanced Playback via Link Properties
+## Advanced Playback via Hash Properties
 
 You can control playback behavior directly from the link by adding properties to the hash. These work like URL query parameters, and you can chain them together using `&`.
 
 For example, `[[My Video.mp4#t=10,20&loop&mute]]` will play the 10-20s segment in a loop without sound.
 
-Here is a list of available properties:
-
-| Property     | Description                                                  | Example                                     |
-| ------------ | ------------------------------------------------------------ | ------------------------------------------- |
-| `t=`         | Sets the start and end time.                                 | `#t=1m2s,1m5s`                               |
-| `loop`       | Loops the media (or the `t=` segment if specified).          | `#t=5,10&loop`                              |
-| `mute`       | Starts the media in a muted state.                           | `#mute`                                     |
-| `play`       | Starts playing the media automatically.                      | `#play`                                     |
-| `vol=`       | Sets the volume from 0 to 100.                               | `#vol=80`                                   |
-| `controls`   | Forces the player controls to be visible.                    | `#controls`                                 |
-| `noctrl`     | Forces the player controls to be hidden.                     | `#noctrl`                                   |
-| `as=`        | Forces the media to be treated as `video` or `audio`.        | `.../media.file#as=video`                   |
+For a complete list of all supported hash properties and their usage, see the [Hash Properties Reference](/docs/v4/hash-props).
 
 ## Manual Media Links
 
@@ -88,18 +77,18 @@ The syntax is `[[media-file.mp4#t=...]]` for internal files or `[description](so
 
 The time format is flexible:
 - Seconds: `#t=121.5`
-- Minutes and seconds: `#t=2m1s`
-- Hours, minutes, and seconds: `#t=1h2m3s`
+- Minutes and seconds: `#t=2:01`
+- Hours, minutes, and seconds: `#t=1:02:03`
 - A time range: `#t=5,10.5` (plays from 5s to 10.5s)
 
 Here are a few examples:
 
 | Link                                       | Action                                   |
 | ------------------------------------------ | ---------------------------------------- |
-| `[[My Video.mp4#t=1m2s]]`                  | Jumps to 1 minute and 2 seconds.         |
+| `[[My Video.mp4#t=1:02]]`                  | Jumps to 1 minute and 2 seconds.         |
 | `[[My Audio.mp3#t=,50]]`                   | Plays from the beginning to 50 seconds.  |
 | `[External Video](.../vid.webm#t=10,20)`   | Plays the segment from 10s to 20s.       |
 
 <Callout type="info">
-  For more details on the time format, see the [W3C Media Fragments URI 1.0 (basic) specification](https://www.w3.org/TR/media-frags/#naming-time).
+  For more details on the time format and all supported hash properties, see the [Hash Properties Reference](/docs/v4/hash-props#temporal-fragment).
 </Callout>
