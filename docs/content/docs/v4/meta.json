@@ -21,6 +21,9 @@
     "---Reference---",
     "reference/commands",
     "reference/hotkeys",
-    "reference/hash-props"
+    "reference/hash-props",
+    "reference/frontmatter-props",
+    "---Changelog---",
+    "changelog/beta-10"
   ]
 }
