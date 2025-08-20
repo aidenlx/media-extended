@@ -17,7 +17,7 @@ import { FolderIcon, GlobeIcon, VideoIcon, LinkIcon } from 'lucide-react';
   <Card 
     icon={<GlobeIcon />} 
     title="Remote Media" 
-    href="#publicly-hosted-media-files"
+    href="#hosted-media-files"
   >
     Stream videos and audio from public URLs
   </Card>
@@ -59,11 +59,15 @@ To open files from your hard drive, either select the `Open local file` option t
 Similar to quick switcher in obsidian, you can also find it in the command palette by searching for `Media Extended: Open external media`.
 </Callout>
 
-### Remote Media Files [#publicly-hosted-media-files]
+### Remote Media Files [#hosted-media-files]
 
-Media Extended supports opening videos and audio from publicly hosted media files that is not password protected, commonly served via WebDAV, or static file servers.
+Media Extended supports opening videos and audio from publicly hosted media files, commonly served via WebDAV, or static file servers.
 
 To open a publicly hosted media file, simply paste its URL into the media picker and press enter. Of course, you can open them from link in your note, as long as `Handle link to remote url` in settings is enabled.
+
+For password protected files, you should go to settings, open platformsassword manager, and add the password to the specific domain and(or) path before opening the file.
+
+![password manager](./password-manager.png)
 
 ### Format and Codec Support
 
