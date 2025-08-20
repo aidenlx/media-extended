@@ -30,11 +30,46 @@ To embed a media file directly in your notes, simply add a `!` before the link. 
 
 This will embed "My Video.mp4", start it automatically at the 10-second mark, and loop it.
 
-You can also control the embed size by adding `|` followed by a number representing the width.
+### Embed Video Size Support [#embed-video-size-support]
 
-`![[My Video.mp4|300]]`
+Media Extended provides flexible control over video embed dimensions to help you create the perfect viewing experience in your notes.
 
-### Creating Media Clips
+You can change the video dimensions by adding `|640x480` to the link destination, where 640 is the width and 480 is the height.
+
+```md
+![[My Video.mp4|640x480]]
+```
+
+If you only specify the width, the video scales according to its original aspect ratio. For example, `![[My Video.mp4|400]]`.
+
+You can also embed an externally hosted video by using a markdown link. You can control the width and height the same way as a wikilink.
+
+```md
+![400](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+```
+
+### Maximum Embed Height Configuration
+
+By default, video embeds have a maximum height constraint to prevent them from overwhelming your notes. By default, the maximum height is set to 60vh, which is 60% of the viewport height (the height of the obsidian window).
+
+You can customize the maximum embed height using the Style Settings plugin:
+
+1. Install the [**Style Settings**](https://obsidian.md/plugins?id=obsidian-style-settings) community plugin if you haven't already
+2. Enable the Style Settings plugin in your community plugins settings
+3. Navigate to `Settings > Style Settings > Media Extended Settings`
+4. Locate the "Maximum Embed Height" setting under the "Media Embed Settings" section
+5. Adjust the value to your preference (default: `60vh`)
+
+You can use any valid CSS height value for the maximum embed height setting:
+
+- **Viewport units**: `60vh` (60% of viewport height), `50vh`, `80vh`
+- **Pixel values**: `400px`, `500px`, `600px`
+- **Percentage**: `50%`, `75%`, `100%`
+- **Other units**: `30rem`, `25em`
+
+The `vh` (viewport height) unit is particularly useful as it adapts to different screen sizes, ensuring your embeds look good on both desktop and mobile devices.
+
+## Creating Media Clips [#creating-media-clips]
 
 By specifying a start and end time with the `t=` hash property in a media embed, you can create a "media clip." This will embed a portion of the media that plays only within the specified range.
 
@@ -46,13 +81,13 @@ This creates a 10-second clip from "My Video.mp4" starting at 1 minute 10 second
 A user interface to visually select and create these clips directly from the player will be available soon.
 </Callout>
 
-## Template Customization
-
+## Template Customization [#template-customization]
+ 
 You can customize the format of inserted timestamps in `Settings > Media Extended > Note Taking`. For example, changing the default `- {{TIMESTAMP}}` to `- [ ] {{TIMESTAMP}}` will create a checklist item for each timestamp.
 
 For a detailed guide on using templates for timestamps and screenshots, see [Template Customization](/docs/v4/template).
 
-## Link Behavior
+## Link Behavior [#link-behavior]
 
 In `Settings > Media Extended > Link behavior`, you can define how media links are opened.
 
@@ -61,34 +96,10 @@ In `Settings > Media Extended > Link behavior`, you can define how media links a
 
 You can choose to open media in the current pane, a new tab, a split pane, or a new window. This, combined with the ability to [pin players](/docs/v4/playback#avoid-player-clutter-with-pinning), gives you full control over your media note-taking workspace.
 
-## Advanced Playback via Hash Properties
+## Advanced Playback via Hash Properties [#advanced-playback-via-hash-properties]
 
 You can control playback behavior directly from the link by adding properties to the hash. These work like URL query parameters, and you can chain them together using `&`.
 
 For example, `[[My Video.mp4#t=10,20&loop&mute]]` will play the 10-20s segment in a loop without sound.
 
-For a complete list of all supported hash properties and their usage, see the [Hash Properties Reference](/docs/v4/hash-props).
-
-## Manual Media Links
-
-For more control, or for when you already know the exact time you want to link to, you can create timestamps manually. This is done by adding a "media fragment" to the end of the link.
-
-The syntax is `[[media-file.mp4#t=...]]` for internal files or `[description](source-url#t=...)` for external media.
-
-The time format is flexible:
-- Seconds: `#t=121.5`
-- Minutes and seconds: `#t=2:01`
-- Hours, minutes, and seconds: `#t=1:02:03`
-- A time range: `#t=5,10.5` (plays from 5s to 10.5s)
-
-Here are a few examples:
-
-| Link                                       | Action                                   |
-| ------------------------------------------ | ---------------------------------------- |
-| `[[My Video.mp4#t=1:02]]`                  | Jumps to 1 minute and 2 seconds.         |
-| `[[My Audio.mp3#t=,50]]`                   | Plays from the beginning to 50 seconds.  |
-| `[External Video](.../vid.webm#t=10,20)`   | Plays the segment from 10s to 20s.       |
-
-<Callout type="info">
-  For more details on the time format and all supported hash properties, see the [Hash Properties Reference](/docs/v4/hash-props#temporal-fragment).
-</Callout>
+For a complete list of all supported hash properties and their usage, including timestamp/time range format and other playback control properties, see the [Hash Properties Reference](/docs/v4/hash-props).
