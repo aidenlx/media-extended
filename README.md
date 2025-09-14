@@ -12,13 +12,12 @@
 </div>
 
 > [!WARNING]
-> **License Change:** Media Extended v4 is now available for testing via BRAT.
+> **License Change:** 
 > Future releases of v4 will be **closed source**.
 > The original codebase up to version 3 remains open source under the MIT license and can be found in the [`v3` branch](https://github.com/aidenlx/media-extended/tree/v3).
 > 
-> To join the beta testing, please refer to the [**Documentation**](https://mx.pkmer.net/docs/v4#v3-user).
 
-![Media Extended plugin with player and media note](./docs/content/docs/v4/first-note.png)
+![Media Extended plugin with player and media note](./assets/first-note.png)
 
 ## Overview
 
