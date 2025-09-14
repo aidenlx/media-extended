@@ -3,9 +3,9 @@
   <strong>A Media Integration Plugin for Obsidian</strong>
   <p>Integrate, manage, and play media files directly in Obsidian, with playback controls, timestamp links, and more.</p>
   <p>
-    <a href="https://mx.pkmer.net/docs/v4">📖 Documentation</a>
+    <a href="https://mx.pkmer.net">📖 Website</a>
     ·
-    <a href="https://mx.pkmer.net/docs/v4#install">🚀 Installation</a>
+    <a href="https://mx.pkmer.net/docs/v4">🚀 Getting Started</a>
     ·
     <a href="https://github.com/aidenlx/media-extended/issues">🐛 Issues</a>
   </p>
@@ -15,7 +15,7 @@
 > **License Change:** 
 > Future releases of v4 will be **closed source**.
 > The original codebase up to version 3 remains open source under the MIT license and can be found in the [`v3` branch](https://github.com/aidenlx/media-extended/tree/v3).
-> 
+> For details, see [v4 Release Notes](https://mx.pkmer.net/blog/v4-release)
 
 ![Media Extended plugin with player and media note](./assets/first-note.png)
 
