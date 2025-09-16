@@ -15,7 +15,7 @@
 > **License Change:** 
 > Future releases of v4 will be **closed source**.
 > The original codebase up to version 3 remains open source under the MIT license and can be found in the [`v3` branch](https://github.com/aidenlx/media-extended/tree/v3).
-> For details, see [v4 Release Notes](https://mx.pkmer.net/blog/v4-release)
+> For details, see [v4 release notes](https://mx.pkmer.net/blog/v4-release#license-change)
 
 ![Media Extended plugin with player and media note](./assets/first-note.png)
 
@@ -35,6 +35,16 @@ Media Extended is a plugin that integrates media playback and management into Ob
 | **Live Recording Timestamps** | While using Obsidian's audio recorder, drop timestamp markers into your notes that automatically become clickable links when the recording is saved. |
 | **Customizable Templates** | Tailor the format of inserted timestamps and screenshot links to fit your personal note-taking workflow. |
 | **Powerful Linking** | Create media links and embeds with fragments for start/end times (`#t=...`), looping, and auto-play for precise control. |
+
+## 📋 Disclosures
+
+> [!IMPORTANT]
+> **File System Access**
+> This plugin may access files outside of Obsidian vaults when you store media files on external drives, portable disks, or cloud storage services like OneDrive. This access is necessary to play media files that aren't stored directly within your vault.
+
+> [!IMPORTANT]  
+> **Network Access**
+> This plugin requires network access to stream media from online services (YouTube, Vimeo, etc.) and to connect to hosted WebDAV services for remote media storage. Network connections are only made to services you explicitly configure or link to.
 
 ## 🚀 Quick Start
 
