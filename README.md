@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Media Extended</h1>
   <strong>A Media Integration Plugin for Obsidian</strong>
-  <p>Integrate, manage, and play media files directly in Obsidian, with playback controls, timestamp links, and more.</p>
+  <p>Transform your Obsidian into a powerful video note-taking tool.</p>
   <p>
     <a href="https://mx.pkmer.net">📖 Website</a>
     ·
