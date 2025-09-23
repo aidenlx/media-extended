@@ -23,7 +23,7 @@ export default {
   git: {
     commitMessage: "chore: release obsidian plugin v${version}",
     tagName: "${version}",
-    changelog: 'echo "See [changelog](https://mx.pkmer.net/changelog#v${latestTag})"',
+    changelog: 'echo "See [changelog](https://mx.pkmer.net/changelog)"',
     tagAnnotation: "Release Obsidian Plugin v${version}",
     addUntrackedFiles: true,
   },
