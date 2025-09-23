@@ -30,7 +30,7 @@ export default {
   },
   github: {
     release: true,
-    autoGenerate: true,
+    releaseNotes: "See https://mx.pkmer.net/changelog#v${version}",
     assets: [
       "main.js",
       "manifest.json",
