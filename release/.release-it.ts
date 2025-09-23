@@ -1,5 +1,6 @@
 import type { Config } from "release-it";
 import { join } from "node:path";
+
 export default {
   hooks: {
     "after:bump": [
@@ -22,6 +23,7 @@ export default {
   git: {
     commitMessage: "chore: release obsidian plugin v${version}",
     tagName: "${version}",
+    changelog: 'echo "See [changelog](https://mx.pkmer.net/changelog#v${latestTag})"',
     tagAnnotation: "Release Obsidian Plugin v${version}",
     addUntrackedFiles: true,
   },
@@ -30,7 +32,6 @@ export default {
   },
   github: {
     release: true,
-    releaseNotes: "See https://mx.pkmer.net/changelog#v${version}",
     assets: [
       "main.js",
       "manifest.json",

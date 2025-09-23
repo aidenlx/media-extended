@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@release-it/bumper": "^7.0.5",
-    "release-it": "^19.0.1",
+    "release-it": "^19.0.5",
     "semver": "^7.5.4",
     "typescript": "~5.9.2"
   },
