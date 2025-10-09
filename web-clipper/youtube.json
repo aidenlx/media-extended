@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "0.1.0",
+  "name": "mx-youtube",
+  "behavior": "overwrite",
+  "triggers": [
+    "/^https:\\/\\/(www\\.)?youtube\\.com\\/watch\\?v=/"
+  ],
+  "noteNameFormat": "mx-import-youtube",
+  "path": "",
+  "context": "title: {{schema:@VideoObject:name}}\ndescription: {{schema:@VideoObject:description}}",
+  "noteContentFormat": "",
+  "properties": [
+    {
+      "name": "url",
+      "value": "{{schema:@VideoObject:@id}}",
+      "type": "text"
+    },
+    {
+      "name": "title",
+      "value": "{{schema:@VideoObject:name}}",
+      "type": "text"
+    },
+    {
+      "name": "description",
+      "value": "{{schema:@VideoObject:description}}",
+      "type": "text"
+    },
+    {
+      "name": "published_at",
+      "value": "{{schema:@VideoObject:uploadDate}}",
+      "type": "date"
+    },
+    {
+      "name": "image",
+      "value": "{{schema:@VideoObject:thumbnailUrl|first}}",
+      "type": "text"
+    },
+    {
+      "name": "author",
+      "value": "{{schema:@VideoObject:author}}",
+      "type": "text"
+    },
+    {
+      "name": "duration",
+      "value": "{{schema:@VideoObject:duration}}",
+      "type": "text"
+    },
+    {
+      "name": "genre",
+      "value": "{{schema:@VideoObject:genre}}",
+      "type": "text"
+    },
+    {
+      "name": "channel_url",
+      "value": "https://www.youtube.com{{selector:#owner a.yt-simple-endpoint?href|first}}",
+      "type": "text"
+    },
+    {
+      "name": "stats",
+      "value": "{{schema:@VideoObject:interactionStatistic}}",
+      "type": "text"
+    }
+  ]
+}
