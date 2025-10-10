@@ -3,9 +3,9 @@
   <strong>A Media Integration Plugin for Obsidian</strong>
   <p>Transform your Obsidian into a powerful video note-taking tool.</p>
   <p>
-    <a href="https://mx.pkmer.net">📖 Website</a>
+    <a href="https://mx.aidenlx.site">📖 Website</a>
     ·
-    <a href="https://mx.pkmer.net/docs/v4">🚀 Getting Started</a>
+    <a href="https://mx.aidenlx.site/docs/v4">🚀 Getting Started</a>
     ·
     <a href="https://github.com/aidenlx/media-extended/issues">🐛 Issues</a>
   </p>
@@ -15,7 +15,7 @@
 > **License Change:** 
 > Future releases of v4 will be **closed source**.
 > The original codebase up to version 3 remains open source under the MIT license and can be found in the [`v3` branch](https://github.com/aidenlx/media-extended/tree/v3).
-> For details, see [v4 release notes](https://mx.pkmer.net/blog/v4-release#license-change)
+> For details, see [v4 release notes](https://mx.aidenlx.site/blog/v4-release#license-change)
 
 ![Media Extended plugin with player and media note](./assets/first-note.png)
 
@@ -56,7 +56,7 @@ Commencement Address directly in Obsidian.
 obsidian://mx-open?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DUF8uR6Z6KLc
 ```
 
-For detailed guides, please refer to the [**Documentation**](https://mx.pkmer.net/docs/v4).
+For detailed guides, please refer to the [**Documentation**](https://mx.aidenlx.site/docs/v4).
 
 ## 🆘 Support
 
