@@ -1,0 +1,9 @@
+#!name=YouTube-153-patch
+#!desc=Fix youtube 153 error for Obsidian
+#!tag=Quirks
+
+[Rewrite]
+https:\/\/www\.youtube(-nocookie)?\.com\/embed\/ header-add Referer app://obsidian.md
+
+[MITM]
+hostname = www.youtube-nocookie.com, www.youtube.com
