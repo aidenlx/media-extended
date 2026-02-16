@@ -1,0 +1,11 @@
+{
+  "name": "@mx/public",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./manifest.json": "./manifest.json",
+    "./manifest-beta.json": "./manifest-beta.json",
+    "./versions.json": "./versions.json",
+    "./package.json": "./package.json"
+  }
+}
