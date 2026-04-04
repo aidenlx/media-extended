@@ -7,7 +7,7 @@
     ·
     <a href="https://mx.aidenlx.site/docs/v4">🚀 Getting Started</a>
     ·
-    <a href="https://github.com/aidenlx/media-extended/issues">🐛 Issues</a>
+    <a href="https://mx.aidenlx.site/community">💬 Community</a>
   </p>
 </div>
 
@@ -60,9 +60,7 @@ For detailed guides, please refer to the [**Documentation**](https://mx.aidenlx.
 
 ## 🆘 Support
 
-- **Issues & Bug Reports:** [GitHub Issues](https://github.com/aidenlx/media-extended/issues)
-- **Questions & Discussions:** Check existing [issues](https://github.com/aidenlx/media-extended/issues) or create a new one
+If you have questions or issues about the plugin, please post them to our community: <https://mx.aidenlx.site/community>
 
-## 🙏 Special Thanks
+For bug reports, use the GitHub Discussions Q&A category: <https://github.com/aidenlx/media-extended/discussions/categories/q-a>
 
-A special thanks to [bfcs](https://github.com/bfcs) for their valuable contributions. They have helped fix issues during a long period of inactivity and made attempts to implement YouTube transcript functionality!
