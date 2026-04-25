@@ -1,13 +1,16 @@
 {
   "author": "AidenLx",
-  "minAppVersion": "1.8.9",
+  "minAppVersion": "1.12.0",
   "name": "Media Extended",
-  "version": "4.1.5",
+  "version": "4.2.0",
   "authorUrl": "https://aidenlx.site",
   "fundingUrl": {
     "GitHub Sponsor": "https://github.com/sponsors/aidenlx"
   },
   "description": "Media(Video/Audio) Playback Enhancement for Obsidian.md",
   "id": "media-extended",
-  "isDesktopOnly": true
+  "isDesktopOnly": true,
+  "versions": {
+    "@mx/main-daemon": "1.0.0"
+  }
 }
