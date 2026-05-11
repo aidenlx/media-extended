@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Extended `obsidian://open` with `?t=` and `?hash=` parameters — external links to media files in your vault now open at a specific timestamp. Falls through to Obsidian's default handler for non-media files.
 - Extended `obsidian://mx-open` with `?id=`, `?vault=`, `?paneType=`, `?t=`, and `?hash=` parameters — resolve media by library ID, target a specific vault, open in a new pane, and seek to a timestamp.
 - Media notes are now named after their media title (from YouTube metadata, ID3 tags, or filename) instead of random IDs. Falls back to `url-{id}` when no title is available; appends a unique suffix on name collision.
+- Frame-by-frame video navigation to step backward or forward one frame at a time at best effort. Available on both native videos and supported web players (YouTube, Bilibili, Vimeo, Coursera, Baidu, Google Drive). Support both one-shot commands and hold hotkey to keep stepping commands.
 
 ### Fixed
 
