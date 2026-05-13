@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [4.2.4] - 2026-05-13
+
 ### Added
 
 - Copy timestamp commands — copy the current playback time to your clipboard as plain text, URL, Obsidian URL, library URL, rich text link, or markdown link, each in multiple URL flavors. Available from the player menu ("Copy timestamp as" submenu) and as standalone command palette entries. Works with web sources, vault files, and local files outside the vault (desktop only for `file://` paths).
@@ -18,6 +20,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Fixed
 
 - Bilibili multi-part videos now show the correct page-specific title instead of the raw video title.
+
+See [changelog](https://mx.aidenlx.site/changelog/v4.2.4).
 
 ## [4.2.3] - 2026-05-09
 
