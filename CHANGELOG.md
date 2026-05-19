@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+
+- Restored compatibility with other plugins that patch `openLinkText` asynchronously (e.g. Recipe Grabber) — their async work was being dropped when Media Extended's link handler fell through to the default handler.
+
 ## [4.2.4] - 2026-05-13
 
 ### Added
