@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+
+- Embedded videos from browser-only hosts (e.g. Bilibili) now show a placeholder with an "Open in web viewer" or "Configure" button instead of an empty player with no media loaded.
+- Broken-image icon no longer appears next to media embeds written with markdown image syntax (`![](url)`) in Live Preview on newer Obsidian versions, including inside popout windows.
+- Embedded Bilibili videos now enter Bilibili's web fullscreen mode once the player opens, instead of leaving the video confined to its small default frame.
+
 ## [4.2.5] - 2026-05-19
 
 ### Fixed
