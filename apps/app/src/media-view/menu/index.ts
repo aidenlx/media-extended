@@ -4,8 +4,10 @@ import { canProviderScreenshot } from "@/components/player/screenshot";
 import type { MediaInfo } from "@/info/media-info";
 import { handleExternalLinkMenu } from "@/media-note/link-click";
 import { copyScreenshot } from "@/media-note/timestamp/screenshot";
+import { WebiviewMediaProvider } from "@/lib/remote-player/provider";
 import type MxPlugin from "@/mx-main";
 import type { MediaViewType } from "../view-type";
+import { captionSizeMenu } from "./caption-size";
 import { muteMenu } from "./mute";
 import { pipMenu } from "./pip";
 import { speedMenu } from "./speed";
@@ -126,6 +128,9 @@ export default function registerMediaMenu(this: MxPlugin) {
       webpageMenu(menu, ctx, source);
       if (source === "player-menu-embed" || source === "more-options") {
         transcriptMenu(menu, ctx);
+        if (!(ctx.player.provider instanceof WebiviewMediaProvider)) {
+          menu.addItem((item) => captionSizeMenu(item, ctx));
+        }
         menu.addItem((item) =>
           item
             .setTitle("Open media note")

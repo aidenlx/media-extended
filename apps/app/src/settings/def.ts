@@ -37,6 +37,8 @@ type MxSettingValues = {
   screenshotQuality?: number;
   screenshotFolderPath?: string;
   subtitleFolderPath?: string;
+  /** caption font size in px; undefined keeps the auto-sized default */
+  captionFontSize?: number;
 };
 const settingKeys = enumerate<keyof MxSettingValues>()(
   "defaultVolume",
@@ -58,6 +60,7 @@ const settingKeys = enumerate<keyof MxSettingValues>()(
   "defaultLanguage",
   "screenshotFolderPath",
   "subtitleFolderPath",
+  "captionFontSize",
 );
 
 const mxSettingsDefault = {
@@ -134,6 +137,7 @@ export type MxSettings = {
   setDefaultLanguage: (lang: string | null) => void;
   getDefaultLang(): string;
   setScreenshotQuality: (quality: number | null) => void;
+  setCaptionFontSize: (size: number | null) => void;
   setTimestampOffset: (offset: number) => void;
   setInsertPosition: (pos: "before" | "after") => void;
   getUrlMappingData: () => MxSettingValues["urlMappingData"];
@@ -186,6 +190,10 @@ export function createSettingsStore(plugin: MxPlugin) {
     },
     setScreenshotQuality(quality) {
       set({ screenshotQuality: quality ?? undefined });
+      save(get());
+    },
+    setCaptionFontSize(size) {
+      set({ captionFontSize: size && size > 0 ? size : undefined });
       save(get());
     },
     setDefaultLanguage(lang) {

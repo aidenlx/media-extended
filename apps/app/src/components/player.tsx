@@ -51,6 +51,7 @@ export function Player() {
     return source.url.source.pathname.endsWith(".webm");
   });
   const load = useSettings((s) => s.loadStrategy);
+  const captionFontSize = useSettings((s) => s.captionFontSize);
   const isEmbed = useIsEmbed();
 
   const [viewType, setViewType] = useState<MediaViewType>("unknown");
@@ -65,6 +66,11 @@ export function Player() {
         "data-[view-type=video]:aspect-video data-[view-type=audio]:h-20 data-[view-type=audio]:aspect-auto",
       )}
       load={isEmbed ? load : "eager"}
+      style={
+        captionFontSize
+          ? { "--media-cue-font-size": `${captionFontSize}px` }
+          : undefined
+      }
       src={source}
       playsInline
       title={title}
