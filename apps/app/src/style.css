@@ -18,7 +18,10 @@ svg.svg-icon {
   /* Recommended settings in the WebVTT spec (https://www.w3.org/TR/webvtt1). */
   --cue-color: var(--media-cue-color, white);
   --cue-bg-color: var(--media-cue-bg, rgba(0, 0, 0, 0.7));
-  --cue-font-size: calc(var(--overlay-height) / 100 * 4.5);
+  --cue-font-size: var(
+    --media-cue-font-size,
+    clamp(18px, calc(var(--overlay-height) / 100 * 4.5), 28px)
+  );
   --cue-line-height: calc(var(--cue-font-size) * 1.2);
   --cue-padding-x: calc(var(--cue-font-size) * 0.6);
   --cue-padding-y: calc(var(--cue-font-size) * 0.4);
