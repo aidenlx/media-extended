@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- Media Extended now requires Obsidian 1.14.4 or later.
+- Settings tab rebuilt on Obsidian's new settings system: every Media Extended setting can now be found from Obsidian's settings search, default subtitle languages are checked as you type and saved automatically (no Save button), and the volume, speed step, and timestamp offset settings each use a single control instead of a slider paired with a number box.
+
+### Fixed
+
+- Media Library failed to open ("Failed to open") on Obsidian 1.14.
+- Player and flip command names now appear in Chinese when Obsidian's language is set to Chinese.
+
 ## [4.2.7] - 2026-06-07
 
 ### Fixed
