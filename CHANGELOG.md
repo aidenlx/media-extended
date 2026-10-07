@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [4.2.8] - 2026-10-07
+
 ### Changed
 
 - Media Extended now requires Obsidian 1.14.4 or later.
@@ -15,6 +17,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Media Library failed to open ("Failed to open") on Obsidian 1.14.
 - Player and flip command names now appear in Chinese when Obsidian's language is set to Chinese.
+
+See [changelog](https://mx.aidenlx.site/changelog/v4.2.8).
 
 ## [4.2.7] - 2026-06-07
 
